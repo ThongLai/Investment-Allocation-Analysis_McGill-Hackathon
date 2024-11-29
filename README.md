@@ -105,12 +105,17 @@ Our approach consisted of four main steps:
 We experimented with two feature selection approaches:
 
 1. **Heterogeneous Ensembles**:
+
+<div style="text-align: center;">
+    <img src="image.png" alt="alt text" width="500" height="200">
+</div>
+
    - **Filter Methods**: Pearson Correlation and Mutual Information.
    - **Wrapper Methods**: Recursive Feature Elimination (RFE).
    - **Embedded Methods**: Techniques like Lasso, Elastic Net, and XGBoost Feature Importance.
    - Final features were selected using a union of the top features from all methods.
 
-2. **Recursive Feature Elimination (RFE)**:
+1. **Recursive Feature Elimination (RFE)**:
    - Used **XGBoost** with 500 estimators to recursively eliminate irrelevant features.
    - Selected the top **50 features** based on R-squared evaluation.
 
