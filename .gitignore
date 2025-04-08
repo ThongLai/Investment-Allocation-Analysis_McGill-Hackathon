@@ -1,5 +1,8 @@
 # Ignore files generated from code and big dataset
 # Can get the dataset from here instead: https://www.kaggle.com/datasets/minhthonglai/mcgill-fiam-asset-management-hackathon
 
-.clean_data/
-.asset/
+.venv*
+__pycache__/
+clean_data/
+asset/
+.ipynb_checkpoints
