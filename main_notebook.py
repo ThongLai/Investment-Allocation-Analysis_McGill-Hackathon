@@ -626,7 +626,7 @@ total_formatted_time = f"{total_minutes:02}:{total_seconds:02}"
 print(f"Total running time for all methods: {total_formatted_time}")
 
 
-# In[22]:
+# In[ ]:
 
 
 feature_selection_methods = {
@@ -663,8 +663,16 @@ results.plot(
 
 features_df = pd.DataFrame(dict([(k, pd.Series(v.columns)) for k, v in list(feature_selection_methods.items())[1:]]))
 
+
+# In[ ]:
+
+
 print("\nSelected Features from Each Method:")
-display(features_df)
+features_df
+
+
+# In[ ]:
+
 
 # Union all features from all methods
 all_selected_features = pd.concat([features_df[col] for col in features_df.columns]).dropna().drop_duplicates().reset_index(drop=True)
@@ -742,7 +750,7 @@ selected_factor_RFE, selected_data_RFE = load_and_extract_data(data, selected_fa
 # <a name="2.5.3"></a>
 # ### 2.5.3 - Evaluation for Each Technique
 
-# In[26]:
+# In[ ]:
 
 
 # Function to calculate R-squared for a given dataset
@@ -792,9 +800,8 @@ results_df = pd.DataFrame({
 # Determine the best method based on R-squared
 best_method = results_df.loc[results_df['R_squared'].idxmax()]
 
-# Display the results
-display(results_df)
 print(f'Best R_squared: {best_method.Method}:{best_method.R_squared}')
+results_df
 
 
 # In[27]:
@@ -1017,9 +1024,9 @@ top_n_stocks.plot(kind='barh',
 
 # ___________________________________________
 
-# In[46]:
+# In[ ]:
 
 
 # Export this notebook into `.py` file
-# jupyter nbconvert --to script {notebook_name}
+# jupyter nbconvert --to script main_notebook.ipynb
 
