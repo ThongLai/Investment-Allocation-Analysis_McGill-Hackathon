@@ -1,5 +1,8 @@
 # McGill-FIAM Asset Management Hackathon — LYTA Strategy Analytics
 
+**Running [`main_notebook.ipynb`](https://github.com/ThongLai/Investment-Allocation-Analysis_McGill-Hackathon/blob/main/main_notebook.ipynb):**
+[![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/ThongLai/Investment-Allocation-Analysis_McGill-Hackathon/main?urlpath=%2Fdoc%2Ftree%2Fmain_notebook.ipynb)
+
 ## Table of Contents
 
 - [McGill-FIAM Asset Management Hackathon — LYTA Strategy Analytics](#mcgill-fiam-asset-management-hackathon--lyta-strategy-analytics)
