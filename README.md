@@ -2,7 +2,7 @@
 
 **Running [main_notebook.ipynb](https://github.com/ThongLai/Investment-Allocation-Analysis_McGill-Hackathon/blob/main/main_notebook.ipynb):** [![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/ThongLai/Investment-Allocation-Analysis_McGill-Hackathon/main?urlpath=%2Fdoc%2Ftree%2Fmain_notebook.ipynb)
 
-**Technical Report: [Deck - LYTA Strategy Analytics.pdf](docs.google.com/viewer?url=github.com/ThongLai/Investment-Allocation-Analysis_McGill-Hackathon/blob/main/Deck%20-%20LYTA%20Strategy%20Analytics.pdf?raw=true)**
+**Technical Report: [Deck - LYTA Strategy Analytics.pdf](https://docs.google.com/viewer?url=github.com/ThongLai/Investment-Allocation-Analysis_McGill-Hackathon/blob/main/Deck%20-%20LYTA%20Strategy%20Analytics.pdf?raw=true)**
 
 **Dataset: [McGill-FIAM Asset Management Hackathon Dataset](https://www.kaggle.com/datasets/minhthonglai/mcgill-fiam-asset-management-hackathon)**<a name="dataset" id="dataset"></a>
 
