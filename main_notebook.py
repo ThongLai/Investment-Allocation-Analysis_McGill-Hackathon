@@ -48,7 +48,7 @@ print(f"Current Environment location: `{os.path.basename(sys.prefix)}`", end='\n
 # %pip install pandas scikit-learn statsmodels xgboost matplotlib
 
 
-# In[3]:
+# In[ ]:
 
 
 import pandas as pd
@@ -68,6 +68,8 @@ import warnings
 import os
 import requests
 import shutil
+from IPython import get_ipython
+
 warnings.filterwarnings("ignore")
 
 
@@ -201,7 +203,7 @@ missing_values = missing_values[missing_values > 0].sort_values(ascending=False)
 missing_values
 
 
-# In[9]:
+# In[ ]:
 
 
 limit = 30
@@ -220,7 +222,7 @@ missing_values[:limit].plot(
 for index, value in enumerate(missing_values[:limit]):
     plt.text(index, value, str(value), ha='center', va='bottom')
 
-plt.show()
+plt.show(block=False)
 
 
 # <a name="2.2"></a>
@@ -237,7 +239,7 @@ zero_values = zero_values[zero_values > 0].sort_values(ascending=False)
 zero_values
 
 
-# In[11]:
+# In[ ]:
 
 
 limit = 30
@@ -257,7 +259,7 @@ zero_values[:limit].plot(
 for index, value in enumerate(zero_values[:limit]):
     plt.text(index, value, str(value), ha='center', va='bottom')
 
-plt.show()
+plt.show(block=False)
 
 
 # <a name="2.3"></a>
@@ -274,7 +276,7 @@ stock_counts_by_amount_of_months = month_counts_by_stock.value_counts().rename('
 stock_counts_by_amount_of_months
 
 
-# In[13]:
+# In[ ]:
 
 
 limit = 10
@@ -293,7 +295,7 @@ stock_counts_by_amount_of_months[:limit].plot(
 for index, value in enumerate(stock_counts_by_amount_of_months[:limit]):
     plt.text(index, value, str(value), ha='center', va='bottom')
 
-plt.show()
+plt.show(block=False)
 
 
 # <a name="2.4"></a>
@@ -1027,6 +1029,13 @@ top_n_stocks.plot(kind='barh',
 # In[ ]:
 
 
-# Export this notebook into `.py` file
+# Export this notebook into script `.py` file
 # jupyter nbconvert --to script main_notebook.ipynb
+
+
+# In[ ]:
+
+
+# Run the script `.py` file
+# ipython main_notebook.py
 
