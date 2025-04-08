@@ -189,21 +189,21 @@ We experimented with two feature selection approaches:
 ## Repository Structure
 
 ```plaintext
-├── README.md                                 # Project documentation
-├── main_notebook.py                          # Main preprocessing and feature selection script
-├── predict_data.py                           # ML modeling and prediction script
-├── portfolio_analysis_hackathon.py           # Portfolio evaluation and analysis script
-├── McGill-FIAM Asset Management Hackathon Instructions.pdf # Hackathon instructions
-├── Deck - LYTA Strategy Analytics.pdf        # Presentation summarizing the project
-├── .clean_data/                              # Folder for cleaned datasets
-│   ├── selected_data.csv                     # Final cleaned dataset (hidden)
-│   ├── selected_factor.csv                   # Selected features for modeling
-├── predicted/                                # Folder for prediction outputs
-│   └── output.csv                            # Model predictions
-├── .asset/                                   # Folder for raw dataset and market indicators (hidden)
-│   ├── factor_char_list.csv                  # List of factor names
-│   ├── hackathon_sample_v2.csv               # Main dataset
-│   └── mkt_ind.csv                           # Market indicators
+├── README.md                                                   # Project documentation
+├── main_notebook.py                                            # Main preprocessing and feature selection script
+├── predict_data.py                                             # ML modeling and prediction script
+├── portfolio_analysis_hackathon.py                             # Portfolio evaluation and analysis script
+├── McGill-FIAM Asset Management Hackathon Instructions.pdf     # Hackathon instructions
+├── Deck - LYTA Strategy Analytics.pdf                          # Presentation summarizing the project
+├── clean_data/                                                 # Folder for cleaned datasets
+│   ├── selected_data.csv                                       # Final cleaned dataset (hidden)
+│   ├── selected_factor.csv                                     # Selected features for modeling
+├── predicted/                                                  # Folder for prediction outputs
+│   └── output.csv                                              # Model predictions
+├── asset/                                                      # Folder for raw dataset and market indicators (hidden)
+│   ├── factor_char_list.csv                                    # List of factor names
+│   ├── hackathon_sample_v2.csv                                 # Main dataset
+│   └── mkt_ind.csv                                             # Market indicators
 ```
 
 ---
