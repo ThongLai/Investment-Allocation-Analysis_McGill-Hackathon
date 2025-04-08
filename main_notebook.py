@@ -54,6 +54,7 @@ print(f"Current Environment location: `{os.path.basename(sys.prefix)}`", end='\n
 import pandas as pd
 import numpy as np
 import matplotlib.pyplot as plt
+plt.interactive(True)
 
 from sklearn.model_selection import train_test_split, GridSearchCV
 from sklearn.metrics import mean_squared_error, r2_score
@@ -64,12 +65,11 @@ from xgboost import XGBRegressor
 
 import datetime
 import random
-import warnings
 import os
 import requests
 import shutil
-from IPython import get_ipython
 
+import warnings
 warnings.filterwarnings("ignore")
 
 
@@ -222,7 +222,7 @@ missing_values[:limit].plot(
 for index, value in enumerate(missing_values[:limit]):
     plt.text(index, value, str(value), ha='center', va='bottom')
 
-plt.show(block=False)
+plt.show()
 
 
 # <a name="2.2"></a>
@@ -259,7 +259,7 @@ zero_values[:limit].plot(
 for index, value in enumerate(zero_values[:limit]):
     plt.text(index, value, str(value), ha='center', va='bottom')
 
-plt.show(block=False)
+plt.show()
 
 
 # <a name="2.3"></a>
@@ -295,7 +295,7 @@ stock_counts_by_amount_of_months[:limit].plot(
 for index, value in enumerate(stock_counts_by_amount_of_months[:limit]):
     plt.text(index, value, str(value), ha='center', va='bottom')
 
-plt.show(block=False)
+plt.show()
 
 
 # <a name="2.4"></a>
