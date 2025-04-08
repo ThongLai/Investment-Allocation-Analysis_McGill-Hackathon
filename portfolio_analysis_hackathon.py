@@ -70,7 +70,7 @@ print("Sharpe Ratio:", sharpe)
 mkt = pd.read_csv(mkt_path)
 monthly_port = monthly_port.merge(mkt, how="inner", on=["year","month"])
 # Newy-West regression for heteroskedasticity and autocorrelation robust standard errors
-nw_ols = sm.ols(formula="port_11 ~ rf", data=monthly_port).fit(
+nw_ols = sm.ols(formula="port_11 ~ mkt_rf", data=monthly_port).fit(
     cov_type="HAC", cov_kwds={"maxlags": 3}, use_t=True
 )
 print(nw_ols.summary())
