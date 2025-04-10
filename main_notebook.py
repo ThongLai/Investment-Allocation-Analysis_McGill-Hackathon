@@ -37,7 +37,7 @@ print(f"Current Environment location: `{os.path.basename(sys.prefix)}`", end='\n
 # Run the cell below to import all the necessary packages: <br>
 # `pip install -r requirements.txt` or `pip install pandas scikit-learn statsmodels xgboost matplotlib requests`
 
-# In[2]:
+# In[ ]:
 
 
 # If you are running on `Binder`, then it is no need to set up the packages again
@@ -45,10 +45,10 @@ print(f"Current Environment location: `{os.path.basename(sys.prefix)}`", end='\n
 
 # ---OR---
 
-# %pip install pandas scikit-learn statsmodels xgboost matplotlib
+# %pip install pandas scikit-learn statsmodels xgboost matplotlib requests
 
 
-# In[ ]:
+# In[3]:
 
 
 import pandas as pd
@@ -203,7 +203,7 @@ missing_values = missing_values[missing_values > 0].sort_values(ascending=False)
 missing_values
 
 
-# In[ ]:
+# In[9]:
 
 
 limit = 30
@@ -239,7 +239,7 @@ zero_values = zero_values[zero_values > 0].sort_values(ascending=False)
 zero_values
 
 
-# In[ ]:
+# In[11]:
 
 
 limit = 30
@@ -276,7 +276,7 @@ stock_counts_by_amount_of_months = month_counts_by_stock.value_counts().rename('
 stock_counts_by_amount_of_months
 
 
-# In[ ]:
+# In[13]:
 
 
 limit = 10
@@ -628,7 +628,7 @@ total_formatted_time = f"{total_minutes:02}:{total_seconds:02}"
 print(f"Total running time for all methods: {total_formatted_time}")
 
 
-# In[ ]:
+# In[22]:
 
 
 feature_selection_methods = {
@@ -666,14 +666,14 @@ results.plot(
 features_df = pd.DataFrame(dict([(k, pd.Series(v.columns)) for k, v in list(feature_selection_methods.items())[1:]]))
 
 
-# In[ ]:
+# In[23]:
 
 
 print("\nSelected Features from Each Method:")
 features_df
 
 
-# In[ ]:
+# In[24]:
 
 
 # Union all features from all methods
@@ -681,7 +681,7 @@ all_selected_features = pd.concat([features_df[col] for col in features_df.colum
 print(f'Total Selected Features: {len(all_selected_features)} {all_selected_features}')
 
 
-# In[23]:
+# In[25]:
 
 
 selected_factor_heterogeneous, selected_data_heterogeneous = load_and_extract_data(data, selected_factors=all_selected_features.tolist())
@@ -699,7 +699,7 @@ selected_factor_heterogeneous, selected_data_heterogeneous = load_and_extract_da
 
 # #### Implement
 
-# In[24]:
+# In[26]:
 
 
 # Features and target variable selection
@@ -742,7 +742,7 @@ print(f"Top {n_features_to_select} features selected using RFE:")
 print(selected_factor_RFE)
 
 
-# In[25]:
+# In[27]:
 
 
 selected_factor_RFE, selected_data_RFE = load_and_extract_data(data, selected_factors=selected_factor_RFE)
@@ -752,7 +752,7 @@ selected_factor_RFE, selected_data_RFE = load_and_extract_data(data, selected_fa
 # <a name="2.5.3"></a>
 # ### 2.5.3 - Evaluation for Each Technique
 
-# In[ ]:
+# In[28]:
 
 
 # Function to calculate R-squared for a given dataset
@@ -806,7 +806,7 @@ print(f'Best R_squared: {best_method.Method}:{best_method.R_squared}')
 results_df
 
 
-# In[27]:
+# In[29]:
 
 
 # Determine the best method based on R-squared
@@ -821,7 +821,7 @@ else:
 
 # #### Read Extracted Data and Factors
 
-# In[28]:
+# In[30]:
 
 
 selected_factor, selected_data = inputData(data_file=os.path.join(CLEAN_DATA_FOLDER, 'selected_data.csv'), factor_file=os.path.join(CLEAN_DATA_FOLDER, 'selected_factor.csv'))
@@ -830,7 +830,7 @@ selected_factor, selected_data = inputData(data_file=os.path.join(CLEAN_DATA_FOL
 # <a name="2.6"></a>
 # ### 2.6 - Ramdom sample (for testing)
 
-# In[29]:
+# In[31]:
 
 
 # selected_factors, selected_stocks = extract_data(rand_factors=(10, 30), rand_stocks=(50, 100))
@@ -839,13 +839,13 @@ selected_factor, selected_data = inputData(data_file=os.path.join(CLEAN_DATA_FOL
 # <a name="3"></a>
 # ## 3 - Run Prediction
 
-# In[30]:
+# In[32]:
 
 
 get_ipython().run_line_magic('run', 'predict_data.py --data=selected_data.csv --factor=selected_factor.csv --work_dir={CLEAN_DATA_FOLDER} --output_dir={PREDICTED_FOLDER}')
 
 
-# In[31]:
+# In[33]:
 
 
 # Old Models
@@ -856,13 +856,13 @@ get_ipython().run_line_magic('run', 'predict_data.py --data=selected_data.csv --
 # <a name="4"></a>
 # ## 4 - Models Evaluation
 
-# In[40]:
+# In[34]:
 
 
 get_ipython().run_line_magic('run', 'portfolio_analysis_hackathon.py --predicted=output.csv --model=xgb --mkt_ind={ASSET_MKT_IND_PATH} --work_dir={PREDICTED_FOLDER}')
 
 
-# In[41]:
+# In[35]:
 
 
 # for model_name in ['ols', 'lasso', 'ridge', 'en', 'xgb']:
@@ -875,7 +875,7 @@ get_ipython().run_line_magic('run', 'portfolio_analysis_hackathon.py --predicted
 
 # #### Wrap Functions
 
-# In[42]:
+# In[36]:
 
 
 # Create mixed strategy with long and short positions
@@ -965,7 +965,7 @@ def plot_cumulative(monthly_performance):
 # <a name="5.1"></a>
 # ### 5.1 - Plot Cumulative Performance: Mixed Strategy vs. S&P 500 (2010–2023)
 
-# In[43]:
+# In[37]:
 
 
 mkt = pd.read_csv(ASSET_MKT_IND_PATH)
@@ -1006,7 +1006,7 @@ plot_cumulative(monthly_performance)
 # <a name="5.2"></a>
 # ### 5.2 - 10 most held stocks in our portfolio
 
-# In[44]:
+# In[38]:
 
 
 n_top = 10
@@ -1026,14 +1026,14 @@ top_n_stocks.plot(kind='barh',
 
 # ___________________________________________
 
-# In[ ]:
+# In[39]:
 
 
 # Export this notebook into script `.py` file
 # jupyter nbconvert --to script main_notebook.ipynb
 
 
-# In[ ]:
+# In[40]:
 
 
 # Run the script `.py` file
